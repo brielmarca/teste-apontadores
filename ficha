@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+int main(int argc, char** argv) {
+    int x[5] = {10, 11, 12, 13, 14};
+    int *p = x; // Declaração do apontador para a alínea d)
+
+    // a) Valor da posição 3 (usando aritmética de ponteiros)
+    cout << "a) Valor da posição 3: " << *(x + 3) << endl;
+
+    // b) Diferença entre posição 4 e 2
+    cout << "b) Diferença (posição 4 - posição 2): " << *(x + 4) - *(x + 2) << endl;
+
+    // c) Soma dos valores das posições 1 e 3
+    cout << "c) Soma (posição 1 + posição 3): " << *(x + 1) + *(x + 3) << endl;
+
+    // d) Apontador p já declarado acima
+
+    // e) Produto das posições 2 e 3 usando o apontador
+    cout << "e) Produto (posição 2 * posição 3): " << *(p + 2) * *(p + 3) << endl;
+
+    // f) Introduzir novos valores para o array
+    cout << "f) Introduza 5 novos valores para o array:" << endl;
+    for(int i = 0; i < 5; i++) {
+        cin >> *(p + i);
+    }
+
+    // g) Endereço do array
+    cout << "g) Endereço do array: " << (void*)x << endl;
+
+    // h) Endereço da posição 2
+    cout << "h) Endereço da posição 2: " << (void*)&x[2] << endl;
+
+    // i) Endereço do apontador p
+    cout << "i) Endereço do apontador p: " << &p << endl;
+
+    // j) Valores pares do array
+    cout << "j) Valores pares do array:" << endl;
+    for(int i = 0; i < 5; i++) {
+        if(*(p + i) % 2 == 0) {
+            cout << *(p + i) << " ";
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
